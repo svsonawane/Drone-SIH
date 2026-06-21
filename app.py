@@ -429,9 +429,7 @@ if uploaded:
 
     labels = [r["Class"] for r in rows if r["Pixels"] > 0]
     values = [r["Area (ha)"] for r in rows if r["Pixels"] > 0]
-    colors = [f"rgb({CLASS_COLORS[CLASS_NAMES.index(l)][0]},"
-              f"{CLASS_COLORS[CLASS_NAMES.index(l)][1]},"
-              f"{CLASS_COLORS[CLASS_NAMES.index(l)][2]})" for l in labels]
+    colors = [tuple(CLASS_COLORS[CLASS_NAMES.index(l)] / 255.0) for l in labels]
 
     fig, ax = plt.subplots(figsize=(9, 3.5))
     fig.patch.set_facecolor("#0b0f1a")
