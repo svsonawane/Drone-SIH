@@ -1,4 +1,14 @@
+from huggingface_hub import hf_hub_download
 import os
+
+os.makedirs("models", exist_ok=True)
+if not os.path.exists("models/best.pth"):
+    hf_hub_download(
+        repo_id="SnehalSonawane/Drone",
+        filename="best.pth",
+        local_dir="models"
+    )
+
 os.environ["OPENCV_LOG_LEVEL"] = "SILENT"
 
 import streamlit as st
@@ -97,7 +107,7 @@ st.title("🛰️ Land Segmentation & Area Estimator")
 st.markdown("Upload a satellite or aerial image to detect **buildings, woodland, water, roads** and estimate their real-world area.")
 
 if not os.path.exists(model_path):
-    st.error(f"Model not found at `{model_path}`. Make sure you have trained the model first by running `train.py`.")
+    st.error(f"Model not found at `{model_path}`. Please check your Hugging Face repo.")
     st.stop()
 
 model = load_model(model_path)
