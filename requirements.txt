@@ -1,10 +1,9 @@
+opencv-python-headless
 torch
 torchvision
 segmentation-models-pytorch
-albumentations
-opencv-python
-matplotlib
-scikit-learn
-tqdm
 streamlit
+numpy
+pillow
+matplotlib
 pandas
