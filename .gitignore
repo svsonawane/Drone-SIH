@@ -1,0 +1,21 @@
+# Dataset (too large for GitHub)
+images/
+masks/
+data/
+*.tif
+*.zip
+
+# Model weights (too large)
+models/
+
+# Python
+__pycache__/
+*.pyc
+venv/
+.env
+
+# Outputs
+outputs/
+
+# Kaggle
+kaggle.json
